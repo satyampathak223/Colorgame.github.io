@@ -1,5 +1,7 @@
 
 var n=6,k=1;
+var x=document.querySelectorAll(".square");
+var ans=reload(x);
 function reload(x){
 	for(var i=0;i<n;i++)
 	{
@@ -9,18 +11,16 @@ function reload(x){
 		var f="RGB("+r+","+g+","+b+")";
 		x[i].style.background=f;
 	}
+	document.querySelector("#message").textContent="";
 	var ans=Math.round((Math.random()*100))%n;
 	document.querySelector("#colorDisplay").textContent=x[ans].style.background;
 	return ans;
 }
 
 
-var x=document.querySelectorAll(".square");
-var ans=reload(x);
 
 var neww=document.querySelector("#reset");
 neww.addEventListener("click",function(){
-	document.querySelector("#message").textContent="";
     k=1;
     ans=reload(x);
 });
@@ -55,7 +55,8 @@ mode[0].addEventListener("click",function(){
 	n=3;
 	for(var j=3;j<6;j++)
 		x[j].classList.remove("square");
-	ans=reload();
+	k=1;
+	ans=reload(x);
 });
 
 mode[1].addEventListener("click",function(){
@@ -64,6 +65,7 @@ mode[1].addEventListener("click",function(){
 	n=6;
 	for(var j=0;j<6;j++)
 		x[j].classList.add("square");
-	ans=reload();
+	k=1;
+	ans=reload(x);
 });
 
