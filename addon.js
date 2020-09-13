@@ -5,12 +5,13 @@ var ans=reload(x);
 function reload(x){
 	for(var i=0;i<n;i++)
 	{
-		var r=(Math.random()*500)%256;
-		var g=(Math.random()*500)%256;
-		var b=(Math.random()*500)%256;
+		var r=(Math.random()*500)%200 +28;
+		var g=(Math.random()*500)%200 +28;
+		var b=(Math.random()*500)%200 +28;
 		var f="RGB("+r+","+g+","+b+")";
 		x[i].style.background=f;
 	}
+	document.querySelector("h1").style.background="steelblue"
 	document.querySelector("#message").textContent="";
 	var ans=Math.round((Math.random()*100))%n;
 	document.querySelector("#colorDisplay").textContent=x[ans].style.background;
@@ -43,7 +44,7 @@ for(var i=0;i<n;i++)
 				x[i].style.background=this.style.background;
 			k=0;
 			document.querySelector("#message").textContent="Correct!";
-
+			document.querySelector("h1").style.background=this.style.background;
 		});
 }
 
